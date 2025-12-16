@@ -1,15 +1,16 @@
-// lib/domain/usecases/get_tasks.dart
-import 'package:dartz/dartz.dart';
-import '../entities/task.dart';
-import '../repositories/task_repository.dart';
-import 'package:taskmanager/core/error/failures.dart';
+import 'package:taskmanager/features/domain/entities/task.dart';
+import 'package:taskmanager/features/domain/repositories/task_repository.dart';
 
-class GetTasks {
+class GetAllTasksUseCase {
   final TaskRepository repository;
 
-  GetTasks(this.repository);
+  GetAllTasksUseCase(this.repository);
 
-  Stream<List<Task>> execute() {
-    return repository.getTasks();
+  // The 'call' method makes the Use Case class callable like a function
+  Future<List<TaskEntity>> call() async {
+    // Application business logic goes here (e.g., checking sync status,
+    // merging local/remote data, filtering based on complexity)
+
+    return await repository.getAllTasks();
   }
 }

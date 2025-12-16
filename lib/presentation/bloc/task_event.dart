@@ -1,31 +1,20 @@
-// lib/presentation/bloc/task_event.dart
-import 'package:taskmanager/features/domain/entities/task.dart';
-import 'package:equatable/equatable.dart';
-abstract class TaskEvent extends Equatable {
-  const TaskEvent();
-  @override
-  List<Object> get props => [];
-}
+// import '../../domain/entities/task.dart';
 
-class LoadTasks extends TaskEvent {}
+// abstract class TaskEvent {}
 
-class AddTaskEvent extends TaskEvent {
-  final String title;
-  const AddTaskEvent(this.title);
-  @override
-  List<Object> get props => [title];
-}
+// class LoadTasksEvent extends TaskEvent {}
 
-class UpdateTaskEvent extends TaskEvent {
-  final Task task;
-  const UpdateTaskEvent(this.task);
-  @override
-  List<Object> get props => [task];
-}
+// class AddTaskEvent extends TaskEvent {
+//   final Task task;
+//   AddTaskEvent(this.task);
+// }
 
-class DeleteTaskEvent extends TaskEvent {
-  final String id;
-  const DeleteTaskEvent(this.id);
-  @override
-  List<Object> get props => [id];
-}
+// class UpdateTaskEvent extends TaskEvent {
+//   final Task task;
+//   UpdateTaskEvent(this.task);
+// }
+
+// class DeleteTaskEvent extends TaskEvent {
+//   final String id;
+//   DeleteTaskEvent(this.id);
+// }

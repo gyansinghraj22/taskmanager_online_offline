@@ -1,41 +1,49 @@
-// lib/presentation/widgets/add_task_dialog.dart
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:taskmanager/presentation/bloc/task_event.dart';
-import '../bloc/task_bloc.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_bloc/flutter_bloc.dart';
+// import '../../domain/entities/task.dart';
+// import '../bloc/task_bloc.dart';
+// import '../bloc/task_event.dart';
 
-class AddTaskDialog extends StatefulWidget {
-  @override
-  _AddTaskDialogState createState() => _AddTaskDialogState();
-}
+// class TaskFormPage extends StatefulWidget {
+//   const TaskFormPage({Key? key}) : super(key: key);
 
-class _AddTaskDialogState extends State<AddTaskDialog> {
-  final _titleController = TextEditingController();
+//   @override
+//   State<TaskFormPage> createState() => _TaskFormPageState();
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Text('Add Task'),
-      content: TextField(
-        controller: _titleController,
-        decoration: InputDecoration(hintText: 'Enter task title'),
-        autofocus: true,
-      ),
-      actions: [
-        TextButton(
-          onPressed: () => Navigator.pop(context),
-          child: Text('Cancel'),
-        ),
-        ElevatedButton(
-          onPressed: () {
-            if (_titleController.text.isNotEmpty) {
-              context.read<TaskBloc>().add(AddTaskEvent(_titleController.text));
-              Navigator.pop(context);
-            }
-          },
-          child: Text('Add'),
-        ),
-      ],
-    );
-  }
-}
+// class _TaskFormPageState extends State<TaskFormPage> {
+//   final _controller = TextEditingController();
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Add Task')),
+//       body: Padding(
+//         padding: const EdgeInsets.all(16.0),
+//         child: Column(
+//           children: [
+//             TextField(
+//               controller: _controller,
+//               decoration: InputDecoration(labelText: 'Task title'),
+//             ),
+//             SizedBox(height: 20),
+//             ElevatedButton(
+//               onPressed: () {
+//                 final task = Task(
+//                   id: DateTime.now().millisecondsSinceEpoch.toString(),
+//                   title: _controller.text,
+//                   completed: false,
+//                   updatedAt: DateTime.now(),
+//                   isSynced: false,
+//                 );
+//                 BlocProvider.of<TaskBloc>(context).add(AddTaskEvent(task));
+//                 Navigator.pop(context);
+//               },
+//               child: Text('Add Task'),
+//             )
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

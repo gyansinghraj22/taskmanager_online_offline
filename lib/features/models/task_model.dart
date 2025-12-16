@@ -73,7 +73,7 @@ class Task extends HiveObject {
     required this.title,
     this.completed = false,
     required this.updatedAt,
-    this.isSynced = false,
+    this.isSynced = false, required String description,
   }) : id = id ?? Uuid().v4();
 
   Map<String, dynamic> toJson() => {

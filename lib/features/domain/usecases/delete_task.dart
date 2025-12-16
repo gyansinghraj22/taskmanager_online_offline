@@ -1,15 +1,19 @@
-// lib/domain/usecases/delete_task.dart
-import 'package:dartz/dartz.dart';
-import '../repositories/task_repository.dart';
-import 'package:taskmanager/core/error/failures.dart';
+// domain/usecases/delete_task.dart
+import 'package:taskmanager/features/domain/repositories/task_repository.dart';
 
-class DeleteTask {
+class DeleteTaskParams {
+  final String id;
+  DeleteTaskParams(this.id);
+}
+
+class DeleteTaskUseCase {
   final TaskRepository repository;
 
-  DeleteTask(this.repository);
+  DeleteTaskUseCase(this.repository);
 
-  Future<Either<Failure, Unit>> execute(String id) async {
-    await repository.deleteTask(id);
-    return const Right(unit);
+  Future<void> call(DeleteTaskParams params) async {
+    // Optional: Add logic like permission checks or cascade deletion here.
+
+    await repository.deleteTask(params.id);
   }
 }

@@ -1,16 +1,27 @@
-// lib/domain/usecases/update_task.dart
-import 'package:dartz/dartz.dart';
-import '../entities/task.dart';
-import '../repositories/task_repository.dart';
-import 'package:taskmanager/core/error/failures.dart';
+// // domain/usecases/update_task_details.dart
+// class UpdateTaskDetailsParams {
+//   final String id;
+//   final String? title;
+//   final String? description;
+//   UpdateTaskDetailsParams({required this.id, this.title, this.description});
+// }
 
-class UpdateTask {
-  final TaskRepository repository;
+// class UpdateTaskDetailsUseCase {
+//   final TaskRepository repository;
 
-  UpdateTask(this.repository);
+//   UpdateTaskDetailsUseCase(this.repository);
 
-  Future<Either<Failure, Unit>> execute(Task task) async {
-    await repository.updateTask(task);
-    return const Right(unit);
-  }
-}
+//   Future<void> call(UpdateTaskDetailsParams params) async {
+//     // 1. Fetch the existing task
+//     TaskEntity existingTask = await repository.getTaskById(params.id);
+
+//     // 2. Update properties using the copyWith method
+//     final updatedTask = existingTask.copyWith(
+//       title: params.title,
+//       description: params.description,
+//     );
+
+//     // 3. Persist the updated entity
+//     await repository.updateTask(updatedTask);
+//   }
+// }

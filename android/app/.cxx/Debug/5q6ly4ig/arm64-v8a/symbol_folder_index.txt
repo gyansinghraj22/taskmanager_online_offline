@@ -1,0 +1,1 @@
+/home/gyan/Desktop/flutter/taskmanager/build/app/intermediates/cxx/Debug/5q6ly4ig/obj/arm64-v8a
